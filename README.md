@@ -1,2 +1,3 @@
-# hugo
-Hugo Static Site Generator
+Hugo Generator
+==============
+

@@ -1,0 +1,25 @@
+name: 'Hugo Generator'
+description: 'Build a static site using Hugo'
+
+inputs:
+  source_dir:
+    description: 'The directory containing your Hugo site'
+    required: false
+    default: '.'
+  output_dir:
+    description: 'The directory to output the generated site'
+    required: false
+    default: 'public'
+  args:
+    description: 'Additional arguments'
+    required: false
+
+runs:
+  using: 'docker'
+  image: docker://ghcr.io/hugomods/hugo:latest
+  args:
+    - --source
+    - ${{ inputs.source_dir }}
+    - --destination
+    - ${{ inputs.output_dir }}
+    - ${{ inputs.args }}
